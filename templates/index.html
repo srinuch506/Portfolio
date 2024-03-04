@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <title>Srinivasarao Ch|Web Developer</title>
+    <meta
+      name="description"
+      content="I'm a Enthusiastic learner and love to build web sites, I want to improve my skills in Software Development and Web Development."
+      />
+    <meta name="author" content="Srinivasarao Ch" />
+    <meta
+      name="google-site-verification"
+      content="wX2xdkxqjrC4rA2EM-9bbaVpiEEFG8ae5azgeZDd-oo"
+    />
+
+    <meta
+      property="og:title"
+      content="Srinivasarao Ch| Web Developer"
+    />
+    <meta property="og:site_name" content="Srinivasarao Ch Portfolio Website" />
+    <meta property="og:url" content="https://www.SrinivasaraoCh.com/" />
+    <meta
+      property="og:description"
+      content="I'm a Enthusiastic learner and love to build web sites, I want to improve my skills in Software Development and Web Development."
+      />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/C8Wnkrt/pretty-snap-2022-3-29-16-11.png"
+    />
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QD9ESD1D9K"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-QD9ESD1D9K");
+    </script>
+  </head>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="https://img.hotimg.com/1673539861392-1.jpeg"
+              alt="srinu Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">SRINIVASARAO CHERUKUPALLI</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./#projects" class="header__link"> Projects </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+  
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./#projects"> Projects </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="home-hero">
+      <div class="home-hero__content">
+        <h1 class="heading-primary">Hi!, I'm SRINIVASARAO CH</h1>
+        <div class="home-hero__info">
+          <p class="text-primary">
+            I'm a Enthusiastic learner and love to build web sites,
+            I want to improve my skills in Software Development and Web Development.
+          </p>
+        </div>
+        <div class="home-hero__cta">
+          <a href="./#projects" class="btn btn--bg">Projects</a>
+        </div>
+        <div class="home-hero__cta">
+            <a href="/resume" class="btn btn--bg">Resume</a>
+        </div>
+      </div>
+      <div class="home-hero__socials">
+        <div class="home-hero__social">
+          <a
+            href="https://www.linkedin.com/in/srinivasarao-cherukupalli-34a844240"
+            class="home-hero__social-icon-link"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+              src="data:image/png;base64,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"
+              alt="Srinu Linkedin Profile"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a
+            href="https://twitter.com/srinuch506"
+            class="home-hero__social-icon-link"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAilBMVEX///8AAADPz88EBAQ9PT2YmJj29vb8/Pz5+fni4uLV1dWvr6/Y2Nienp7y8vLT09NeXl61tbXe3t4sLCxzc3MmJiYeHh58fHzq6uo1NTWCgoKcnJxwcHAwMDClpaUoKChWVlZnZ2e5ublLS0vCwsIYGBiOjo4PDw9CQkJYWFhjY2ORkZGIiIhHR0e75+3hAAAJt0lEQVR4nO2da1/iOBTGLXFa8FIvCOKMKKgM6uj3/3orM0qfB8+haZu06W/zf7H7YrtNYvv0XBMODiKRSCQSiUQikUgkEolEIpFIJBKJRCKRSCTyP+FyUA3vExq5Hm6WVOPBwZj7uKTRjlzc8qziEkcuBlUZ0VhnB5mLm/6qtsJDJ4Mq5FMc6snVbR+rLfHa1bjfSQ9xIHeCyFcV1meS5MLZyDtkjzjMscM7DzY3rIAvKS5wkDunt/5TaYHJjdPBt7zgH/q345tXkqJJrhwP/5erBFboXOy5gbtbvLIuNfLJG97/1v39n2gB74cSY7jCuRRJKOeu776B/oSyIcpgia6leIfDP7ox9Ls84uspPyL08BxK8WM5x7jAZ08+xWz9tcKPfx0OxWtwIi6t4gMucDJzeGeCpKh8y67hEncTGeDrM/Xo+P7EJcqPKLsp5nLj6mU6KUY1nj375/KRZnCFI5vF4cSlm5sqfEixmL/yiC6KK9xIkQNU3xE2KV75WqIUHbxRI3D7jbt4ScVCikOIcOaNB0xvcEQPrtIuw2ccUH5EW90Y01yK5BC7DScUSBUT2SpewCUN/+q0wF/N7mULSVFxgFGKjb59r+jlvzW5UxXsrOKWJmmbW7T0XiIyEZai/Igw5Vd/ZvAqGD/hhAJZ4HkqXoMOal0p/sBxHn1m8L7RjlUs4qWPN/W9wXTrgNNXHlEhRZPcyJ/c/cAH2SSH8pvijSyb4xJPxIsKq1hLii3FSypVpGjqSLGI1Ezt17wZaNSTpXzNbX0pHuHtPYcTGlc4BcWbAqt4X+lTyPGSk/pSdYbz8kngRKtIcVaUX4z/eEmF/s7KI6qXtsnHuEDf9cg9UPpL9DiyWlJMMe3aRrykQ16jIkV4l+d2VjGjAtqpw/lWZ2hhFas7qFRf+uNyvjWgkvrEjYOK73Xy0+18a0CpdiVWvKJMeZnRKPxB46X8UplXnJAsRYwVb8rcS3J4X9zPtzrZBJdY7qCWPJXfuMB24yUVcq9W5VLck0vKNi998UYrlZH2OS1mbzQHFT28PT4m+bo3uZ/51uAV56VIEczKWL0RFX5W7cdLKukE82Fn4jVoVuTnnO0UmbuIl1SoK8zCKsrPeUALlL9ZnXGKc1Mc1DIpjv4J+ZPOwgmNc/wGyp5kBvUVwUGdbf/z5kb+yy9VyacoRTlW3CvFnMIJb01jDTjDFU4rO6hYXzLdxksq5VLc+NTFn4GkOKR4qetwQuMcHoJSIxqOi0vG+JwXKOM3P60yzUnxMVhYRYgVl/h/euxNbQpJMSnvttmqjZJ2IcRLKtArrRaKMLz9lCLV6hZtTbYe5zhXxSpi2uavFClectaA44mcmjJltwSDrc0bSd/g0vi4c8C1NMlajn5Yihf4FR2HEy+pUElzIV+DaRtK80wDipd0qHNCNt1DctDgxQ4qXlKxkaKyBUc2oeFBYexUFhZlY74IL5zQoK//Qr7m9vsKOyy/VIZ2tch7ItL57gJDjJdUcouXj6oBpuvyS2U4o1QeK4ZQnajIW/ElMcmjfM0SFhhwOKFBVlGWYgbbCO9DSW7bM7OwitCcrmXKQ4akaGwc1N5BQZ+FFE8CD5sELHJLQ8ig9iGs2IF3EJRbxaCzFzJUKTNyYHRX3soRMjb5l60U1fpx0FCvtGwVMVZUGhxDxkaKPbeKJMWk3Cr2UIrXGOoqjdpLWGJHXZYN4IqLvB8kL9pVkkn/7D42aGrbzjCD2uaWCkc8UEpGtorH/baKJMVD+RqUYg+tIqVkFClCrKi0coQMn3n0JJY/0Sr20EHllIzmoG4/Rz2VYsGzfM0Sltg3KWY7D1GWIjavK60c4UL7lxIbB7VnUhwku5RIMemZFE++LVCzilgj70sd6mB3/9Incoo7RQe1N1KcTaUVKoWmI3B/+hIrzibiArVyL3Yt9EOKmyKafGaWcsIS9lP3IlakRM1PclDl/UHpfXHFOPxiRkYNRMudXaGqFD9R2/4DgvYvLbKdbQuKVUQphl42vcL1/Nv98ro56+QL5SyJV5Bu2A4qudufq0np0ypLMb8vlrgOOW3zh7q5vuw3dYWJ3QkZyfW1zSlX4xiXAt1cpxZNUL1wUDkVjHKi7+tcfgvxmkCtIjdj0CRTOsxWblHAa1ZBWkUICM23pzBI8EWVG4VO4JIQM6gcL32Ld6llVtmqF7YUR2tcgdCCQFLUrWKwUuR4SXJLeNuC4qCuilM2x2HFijntRZQ7FDivITeaXIYaK6ZjdMy0w8eoV1qR4lauYfX1cTVNb1ejQ6uVE5Zww184uxHpI7LH5crpa6RIEZzYaShWkeKlvZvpbaQYoINK+5dKNtOTZ14mxaS1AxP3Q/0z87Rkjx1lOKblVjGADCo9lfvSNjXulb4S/x64Db77DCo4WiZZW2wOYfdcluKguGXy0vHGSy6/XNrM5o2kKGcs8MdRurWK/EAsNUO90krycAmXdJm24Y+/7e4X7gqTS2pFt41JJt31oNpkQiXgyavV7SO4ojOrWNSXTMXffiEDo7yFp0mh146kOKPjtqtN4t1CiuigdhIr8nkPFX/7BbYtGC2Pj41v6/atYmYbTiiwlZFfANyv2L4UM/K+arQY2Erxi9bTNnQ+Xq28GJ35sZI9hRcYpGUHdQmz0zaOlMBWUf4jDdfFx0bZl+oJKr/UPZuLE+SyFNGlaDOD+pYkRUrsw+Oo6RqzFGWDgKmdtmLFDEY1zQ4fo8+xEiadg5vellU8Tb7yah//tImXVKDpxmhvYQrnSLUkRe7HO2kUvdHZ5IoUj0r/CI7heKlpuu+aulJUKW5zsT8ajmdBvXhJZUhWUQmT0Cp6lyLXlxxspuf+N9lBTaEkYjw7qEXvdq0D5SV424L8FuKLs3AxqMqICrmONEHZVkXYbXXbcLzk6rdf4DDbjYOqWcXi3fHnoGb0+0vuOpZ524JiFeGKae4pvZhRXO6utrfb8V4uRV9WsXm8pGIjRcyg+nFQqYD27rbqxecrKb6Z73bwa6zxllcnKsJmdiFek8Ov93nIoNIBQsppEE24g3BMewvxz+BYihkX4Nc+Dh9bkoP6+4fAKQZbjh1UOl2tUbykglK0+iVwpyV+KqD5MrjCDpS9uMygcrzk7fCxO2UpGu5+XcCmucAJr8pSZIwzKfLv1fo8MSdb6esRGTipDl+S7P3WgI60pSisXFit2Qq/bH4Pa852GjTLWTQfNKcfmPJ/+Nj5nuVINH6nMvIXW0h04e4gKxqarpwytudtNH1833haQjP/avQ0ANppojsZVKObH9eLRCKRSCQSiUQikUgkEolEIpFIJBKJRCKRSAf8B+OiZ5/sX89IAAAAAElFTkSuQmCC"
+            alt="Srinu Twitter Profile"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+        
+        <div class="home-hero__social">
+          <a
+            href="https://github.com/srinuch506"
+            class="home-hero__social-icon-link"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+              src="https://seeklogo.com/images/G/github-logo-2E3852456C-seeklogo.com.png"
+              alt="Srinu Github Profile"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+
+        <div class="home-hero__social">
+          <a
+            href="https://g.dev/srinuch"
+            class="home-hero__social-icon-link"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+            src="data:image/png;base64,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"
+            alt="Srinu DEV.to Blog Profile"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="home-hero__mouse-scroll-cont">
+        <div class="mouse"></div>
+      </div>
+    </section>
+    <section id="about" class="about sec-pad">
+      <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-med">
+          <span class="heading-sec__main">About Me</span>
+          <span class="heading-sec__sub">
+            Here you will find more information about me, what I do, and my
+            current skills mostly in terms of programming and technology
+          </span>
+        </h2>
+        <div class="about__content">
+          <div class="about__content-main">
+            <h3 class="about__content-title">Get to know me!</h3>
+            <div class="about__content-details">
+              <p class="about__content-details-para">
+                I'm a <strong>Web Developer</strong> building
+                and managing the Web Applications that leads to the success 
+                of the overall product. Check out some of
+                my work in the <strong>Projects</strong> section.
+              </p>
+              <p class="about__content-details-para">
+                I'm open to <strong>Job</strong> opportunities where I can
+                contribute, learn and grow. If you have a good opportunity that
+                matches my skills and experience then don't hesitate to
+                <strong>contact</strong> me.
+              </p>
+            </div>
+            <a href="./#contact" class="btn btn--med btn--theme dynamicBgClr"
+              >Contact</a
+            >
+          </div>
+          <div class="about__content-skills">
+            <h3 class="about__content-title">My Skills</h3>
+            <div class="skills">
+              <div class="skills__skill">Python</div>
+              <div class="skills__skill">C</div>
+              <div class="skills__skill">SQL</div>
+              <div class="skills__skill">Basics of JAVA</div>
+              <div class="skills__skill">Mysql</div>
+              <div class="skills__skill">HTML</div>
+              <div class="skills__skill">CSS</div>
+              <div class="skills__skill">Github</div>
+              <div class="skills__skill">Terminal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="projects sec-pad">
+      <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-bg">
+          <span class="heading-sec__main">Projects</span>
+          <span class="heading-sec__sub">
+            Here you will find some of the personal and clients projects that I
+            created with each project containing its own case study
+          </span>
+        </h2>
+
+        <div class="projects__content">
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="https://img.hotimg.com/Screenshot-18a877401df1b145cb.png"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Feedback Information System</h3>
+              <p class="projects__row-content-desc">
+                Feedback information System is a successful Open-Source project that I created
+                which have been featured on collecting the feedbacks from the Students and it will 
+                helps to understand the student capability on subject.
+              </p>
+              <a class='btn btn--med btn--theme dynamicBgClr' href='/project-1' target='_blank'>Case Study</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="contact sec-pad dynamicBg">
+      <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-med">
+          <span class="heading-sec__main heading-sec__main--lt">Contact</span>
+          <span class="heading-sec__sub heading-sec__sub--lt">
+            Feel free to Contact me by submitting the form below 
+            and I will get back to you as soon as possible
+          </span>
+        </h2>
+        <div class="contact__form-container">
+          <form action='/contact' class='contact__form' method='POST'>
+            <div class="contact__form-field">
+              <label class="contact__form-label" for="name"><h2>Name</h2></label>
+              <input
+                required
+                placeholder="Enter Your Name"
+                type="text"
+                class="contact__form-input"
+                name="name"
+                id="name"
+              />
+            </div>
+            <div class="contact__form-field">
+              <label class="contact__form-label" for="email"><h2>Email</h2></label>
+              <input
+                required
+                placeholder="Enter Your Email"
+                type="email"
+                class="contact__form-input"
+                name="email"
+                id="email"
+              />
+            </div>
+            <div class="contact__form-field">
+              <label class="contact__form-label" for="message"><h2>Message</h2></label>
+              <textarea
+                required
+                cols="30"
+                rows="6"
+                class="contact__form-input"
+                placeholder="Enter Your Message"
+                name="message"
+                id="message"
+              ></textarea>
+            </div>
+            <div>
+              <input type='submit' name='form-name' value='Submit' />
+              <a href="/contact" class="btn btn--bg" >Submit</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.linkedin.com/in/srinivasarao-cherukupalli-34a844240"
+              >
+                <img
+                  class="main-footer__icon"
+                  src="data:image/png;base64,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"
+                  alt="Srinu Linkedin Profile"
+                />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/srinuch506"
+              >
+                <img
+                  class="main-footer__icon"
+                  src="https://seeklogo.com/images/G/github-logo-2E3852456C-seeklogo.com.png"
+                  alt="Srinu Github Profile"
+                />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://twitter.com/srinuch506"
+              >
+                <img
+                  class="main-footer__icon"
+                  src="data:image/png;base64,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"
+                  alt="Srinu Twitter Profile"
+                />
+              </a>
+
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://g.dev/srinuch"
+              >
+                <img
+                  class="main-footer__icon"
+                  src="data:image/png;base64,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"
+                  alt="Srinu DEV.to Blog Profile"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h2 class="heading heading-sm text-lt">Srinivasarao Ch</h2>
+            <p class="main-footer__short-desc">
+              A Web Developer building the Frontend of Websites and Web 
+              Applications that leads to the success of the overall product
+            </p>
+          </div>
+        </div>
+
+        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
+        <div class="main-footer__lower">
+          &copy; Copyright
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          . Made by
+          <a rel="noreferrer" target="_blank" href="http://127.0.0.1:5000/"
+            >Srinivasarao Ch</a
+          >
+        </div>
+      </div>
+    </footer>
+<!--
+    <script src="./index.js"></script>
+    <script
+      src="//code.tidio.co/hkirvl5pqs5cjjawh11xutnzjgtg9tfi.js"
+      async
+    ></script>-->
+  </body>
+</html>
