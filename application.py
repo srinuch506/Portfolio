@@ -1,20 +1,20 @@
 from flask import Flask,render_template,send_file,request,redirect,url_for
-app=Flask(__name__)
+application=Flask(__name__)
 from sdmail import sendmail
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html')
-@app.route('/mail')
+@application.route('/mail')
 def mail():
     return 'mail sended successfully'
-@app.route('/resume')
+@application.route('/resume')
 def resume():
     pdf_file='./Srinivasarao_Ch_Resume.pdf'
     return send_file(pdf_file, as_attachment=True)
-@app.route('/project-1')
+@application.route('/project-1')
 def project1():
     return render_template('project-1.html')
-@app.route('/contact',methods=['GET','POST'])
+@application.route('/contact',methods=['GET','POST'])
 def contact():
     if request.method=='POST':
         name=request.form['name']
@@ -27,4 +27,4 @@ def contact():
     return render_template('index.html')
 
 if __name__=='__main__':
-    app.run(debug=True,use_reloader=True)
+    application.run(debug=True,use_reloader=True)
