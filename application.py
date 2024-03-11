@@ -27,4 +27,4 @@ def contact():
     return render_template('index.html')
 
 if __name__=='__main__':
-    application.run(debug=True,use_reloader=True)
+    application.run()
